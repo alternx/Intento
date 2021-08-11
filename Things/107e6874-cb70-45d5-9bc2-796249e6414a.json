@@ -1,0 +1,39 @@
+{
+    "@context": "https://www.w3.org/2019/wot/td/v1",
+    "title": "camera",
+    "description": "a web camera for providing images and vide through the web",    
+    "securityDefinitions": {
+        "basic": {"scheme": "basic", "in":"header"}
+    },
+    "security": ["basic"],
+    "properties": {
+        "status": {
+            "type": "boolean",
+            "description": "indicates if the camera is on or off",
+            "forms": [{"href": "https://mycamera.com/status"}]
+        }
+    },
+   "actions": {
+        "play": {
+            "output": {
+                "success": {
+                    "type": "boolean",
+                    "description": "a flag to indicate if the process was ok"                    
+                }
+            },
+            "description": "stars recording, it returns a true value to indicate success",
+            "forms": [{"href": "https://mycamera.com/play"}]
+        },
+        "stop": {
+            "output": {
+                "success": {
+                    "type": "boolean",
+                    "description": "a flag to indicate if the process was ok"
+                }
+            },
+            "description": "stops recording, it returns a true value to indicate success",
+            "forms": [{"href": "https://mycamera.com/stop"}]
+        }
+
+    }
+}
